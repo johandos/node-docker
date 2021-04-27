@@ -19,5 +19,5 @@ services:
       - "8080:8080"
     container_name: vue-ui
     volumes:
-       - ./my-app:/usr/src/app/my-app
-       - /usr/src/app/my-app/node_modules
+      - ./my-app:/usr/src/app/my-app
+      - /usr/src/app/my-app/node_modules
