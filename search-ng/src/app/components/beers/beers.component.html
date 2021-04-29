@@ -1,0 +1,30 @@
+<div class="search-hero">
+  <input class="form-control" type="text" name="search" [(ngModel)]="filtered" autocomplete="off" placeholder="&#61442;  Start searching for beers">
+</div>
+<div class="table-content">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Tagline</th>
+      <th scope="col">First brewed</th>
+      <th scope="col">Image</th>
+      <th scope="col">Food pairing</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let beer of beers | filter:filtered; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{beer.name}}</td>
+      <td>{{beer.tagline}}</td>
+      <td>{{beer.first_brewed}}</td>
+      <td><img width="20rem" src="{{beer.image_url}}" /></td>
+      <td>{{beer.food_pairing}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

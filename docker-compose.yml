@@ -1,10 +1,20 @@
   
 version: '3'
 services:
+  search-ng:
+    build:
+      context: ./search-ng
+      dockerfile: Dockerfile
+    ports:
+      - "8091:4500"
+    container_name: search-ng
+    command: "ng serve --host 0.0.0.0 --port 4500"
+    volumes:
+      - ./search-ng:/usr/src/app/search-ng
   test-search:
     build:
       context: ./my-app
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile
     ports:
       - "8090:8080"
     container_name: test-search
